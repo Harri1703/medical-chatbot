@@ -1,0 +1,262 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ffdee9; /* Pink gradient */
+  background: linear-gradient(135deg, #ffdee9, #b5fffc);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 15px;
+  background: #e91e63;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #e91e63 #f4f5f7;
+}
+
+.message {
+  padding: 12px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.user {
+  background: #ff9800;
+  align-self: flex-end;
+  text-align: right;
+  color: white;
+}
+
+.bot {
+  background: #2196f3;
+  align-self: flex-start;
+  text-align: left;
+  color: white;
+}
+
+.typing {
+  display: flex;
+  gap: 5px;
+}
+
+.typing span {
+  width: 8px;
+  height: 8px;
+  background: #e91e63;
+  border-radius: 50%;
+  animation: typingDots 1.5s infinite ease-in-out;
+}
+
+.typing span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingDots {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.upload-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.upload-section input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f0f0f0;
+}
+
+.upload-section button {
+  background: #27ae60;
+  padding: 10px 16px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.upload-section button.uploading {
+  background: #ff9800;
+  cursor: wait;
+}
+
+.upload-section button:hover {
+  background: #219150;
+}
+
+.input-box {
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f0f0f0;
+  outline: none;
+}
+
+button {
+  padding: 12px 16px;
+  margin-left: 8px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #d81b60;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: gray;
+  padding: 10px;
+}
+
+.print-button {
+  margin: 10px auto;
+  padding: 10px 16px;
+  font-size: 16px;
+  color: white;
+  background: #4CAF50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  transition: 0.3s ease-in-out;
+}
+
+.print-button:hover {
+  background: #388E3C;
+}
+
+.faq-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.faq-section::-webkit-scrollbar {
+  height: 6px;
+}
+
+.faq-section::-webkit-scrollbar-thumb {
+  background: #ff9800;
+  border-radius: 10px;
+}
+
+.faq-section p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.faq-section button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
+.faq-section button:hover {
+  background: #e68900;
+}
+
+
